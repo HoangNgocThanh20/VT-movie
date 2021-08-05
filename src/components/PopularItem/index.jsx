@@ -10,9 +10,9 @@ export const PopularItem = ({
     return (
         <div className={styles.wrapper}>
             <Link to="/detailMovie">  
-            <img src={`${image}`} alt="sieu anh hung" />
-            <h5>{header}</h5>
-            <p>{title}</p>
+                <img src={`${image}`} alt="sieu anh hung" />
+                <h5>{header}</h5>
+                <p>{title}</p>
             </Link>
         </div>
     );
