@@ -47,19 +47,13 @@ export const DetailMovie = () => {
 
             <div className={styles.detailContent}>
                 <div className={styles.logoDetail}>
-                    <img src={`${data.getMovieById.poster}`} alt="" />
-                    <div className={styles.wrapperDetail}>
-                      <div className={styles.midDetail}>
-                          <p>{data.getMovieById.description}</p>
-                          <p>Lượt xem: 1.123.234 lượt xem</p>
-                          {/* <p>2020 | Mỹ | 1 Tập</p> */}
-                      </div>
-                      <div className={styles.footerDetail}>
-                          {data.getMovieById.description}
-                      </div>
-                    </div>
+                   <img src={`${data.getMovieById.poster}`} alt="" />
+                </div>
+                <div className={styles.wrapperDetail}>
+                      <p>{data.getMovieById.description}</p>
                 </div>
             </div>
+            <p className={styles.countViews}>Lượt xem: 1.123.234 lượt xem</p>
         </Container>
     );
 }
