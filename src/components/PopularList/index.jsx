@@ -17,9 +17,10 @@ export const PopularList = (
                {listItem.map((item, index) => {
                    return (
                        <PopularItem
+                        item={item}
                         key={index} 
-                        image={item.img}
-                        header={item.head}
+                        image={item.poster}
+                        header={item.name}
                         title={item.title}
                         />
                    )

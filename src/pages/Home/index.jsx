@@ -1,47 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Banner, PopularList } from 'src/components';
+import { gql, useQuery } from '@apollo/client';
+
+const GET_MOVIE_LIST = gql`
+query getMovieList($name: String){
+  getMovieList(name: $name){
+    name
+    id
+    poster
+    description
+    movieParts {
+      type
+      part
+      movieServers {
+        provider
+        movieLinks {
+          name
+          videoLink
+        }
+      }
+    }
+  }
+}
+`
 
 export const Home = () => {
-    const listPopular = [
-        {
-         img: "images/popular1.png",
-         head: "Biệt Đội Siêu Anh Hùng ",
-         title: "Avengers 3: Infinity Warasdsdasdsdasda",
-        },
-        {
-         img: "images/popular2.png",
-         head: "Người Sắt ",
-         title: "Iron Man"
-        },
-        {
-         img: "images/popular3.png",
-         head: "Người Cá",
-         title: "Aqua Man",
-        },
-        {
-         img: "images/popular4.png",
-         head: "Siêu Nhân ",
-         title: "Super Man",
-        },
-        {
-         img: "images/popular5.png",
-         head: "Người Phụ Nữ Tuyệt Vời ",
-         title: "Wonder Woman",
-        },
-        {
-         img: "images/popular6.png",
-         head: "Ánh Sáng ",
-         title: "The Flash",
-        },
-     ]
 
+    const { loading, error, data } = useQuery(GET_MOVIE_LIST, {
+        variables: { name: "" },
+    });
+
+    if(loading)
+        return <div>Loading...</div>;
+    else {
+        console.log(data.getMovieList);
+    }
+    
     return (
         <>
             <Banner />
-            <PopularList listItem={listPopular}/>
-            <PopularList listItem={listPopular}/>
-            <PopularList listItem={listPopular}/>
-            <PopularList listItem={listPopular}/>
+            <PopularList listItem={data.getMovieList}/>
         </>
     );
 }
