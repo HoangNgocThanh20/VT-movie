@@ -6,7 +6,7 @@ export const Home = () => {
         {
          img: "images/popular1.png",
          head: "Biệt Đội Siêu Anh Hùng ",
-         title: "Avengers 3: Infinity War",
+         title: "Avengers 3: Infinity Warasdsdasdsdasda",
         },
         {
          img: "images/popular2.png",
@@ -35,36 +35,13 @@ export const Home = () => {
         },
      ]
 
-     const rapMovieList = [
-        {
-            img: "images/rap1.png",
-            head: "Chuyến Tàu Sinh Tử ",
-            title: "Train To Busan",
-           },
-           {
-            img: "images/rap2.png",
-            head: "Song Lang ",
-            title: "Leon Quang Lê "
-           },
-           {
-            img: "images/rap3.png",
-            head: "Cuộc Săn Lùng Quái Vật",
-            title: "Nanook",
-           },
-           {
-            img: "images/rap4.png",
-            head: "Hương Ga ",
-            title: "Chi Bảo, Chi Pu, Trang Trần",
-           },
-     ]
-
     return (
         <>
             <Banner />
             <PopularList listItem={listPopular}/>
-            <PopularList listItem={rapMovieList}/>
-            <PopularList listItem={rapMovieList}/>
-            <PopularList listItem={rapMovieList}/>
+            <PopularList listItem={listPopular}/>
+            <PopularList listItem={listPopular}/>
+            <PopularList listItem={listPopular}/>
         </>
     );
 }
