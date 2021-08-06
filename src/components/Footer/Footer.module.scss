@@ -2,17 +2,31 @@
     width: 100%;
     margin-bottom: 100px;
     font-weight: 500;
-
+    @media screen and (min-width: 0) and (max-width: 739px) {
+        margin-bottom: 5px;
+    }
+    @media screen and (min-width: 740px) and (max-width: 1113px) {
+        margin-bottom: 5px;
+    }
     .wrapper {
         margin-top: 160px;
+        @media screen and (min-width: 0) and (max-width: 739px) {
+            margin-top: 40px;
+        }
         .footerFlex {
             display: flex;
             justify-content: space-around;
-            
+            @media screen and (min-width: 0) and (max-width: 739px) {
+                display: block;
+            }
             p {
                 font-size: 24px;
                 line-height: 28.13px;
                 margin-bottom: 30px;
+                @media screen and (min-width: 0) and (max-width: 739px) {
+                    font-size: 14px;
+                    line-height: 100%;
+                }
             }
 
             .flexLeft {
@@ -24,6 +38,13 @@
                     margin-top: 25px;
                 }
             }
+            .flexRight {
+                @media screen and (min-width: 0) and (max-width: 739px) {
+                    margin-top: 20px;
+                    display: flex;
+                    justify-content: space-around;
+                }
+            }
         }
     }
 
@@ -32,15 +53,32 @@
         height: 1px;
         background: rgb(228, 219, 219);
         margin-top: 70px;
+        @media screen and (min-width: 0) and (max-width: 739px) {
+            margin-top: 30px;
+        }
     }
 
     .ourCompany {
         margin-left: 26px;
         margin-top: 36px;
+        @media screen and (min-width: 0) and (max-width: 739px) {
+            margin-top: 30px;
+            margin-left: 0;
+        }
         p {
             font-size: 24px;
             line-height: 28.13px;
             margin-top: 16px;
+            @media screen and (min-width: 0) and (max-width: 739px) {
+                font-size: 16px;
+                line-height: 22px;
+                margin-top: 10px;
+            }
+            @media screen and (min-width: 740px) and (max-width: 1113px) {
+                font-size: 18px;
+                line-height: 24px;
+                margin-top: 10px;
+            }
         }
     }
     

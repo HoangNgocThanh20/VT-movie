@@ -17,7 +17,7 @@ export const Header = () => {
                             <input type="text" placeholder="Tìm:tên phim, đạo diễn , diễn viên" />
                             <ion-icon name="search-outline"></ion-icon>
                         </div>
-                        <ul className={`${styles.listPage} flexSpacebetween`}>
+                        <ul className={`${styles.listPage}`}>
                             <li>
                                 <Link to="/home">Trang chủ</Link>
                             </li>

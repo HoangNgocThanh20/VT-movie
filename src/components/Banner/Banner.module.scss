@@ -3,6 +3,14 @@
     height: 441px;
     margin-top: 66px;
     background: radial-gradient(99.96% 663.27% at 0% 3.74%, #FF0303 0%, rgba(153, 2, 2, 0.495026) 73.55%, rgba(131, 2, 2, 0.387165) 83.53%, rgba(106, 1, 1, 0.262945) 93.4%, rgba(85, 1, 1, 0.15901) 97.86%, rgba(53, 1, 1, 0) 100%);
+    @media screen and (min-width: 0) and (max-width: 700px) {
+        margin-top: 30px;
+        height: 180px;
+    }
+    @media screen and (min-width: 740px) and (max-width: 1113px) {
+        margin-top: 30px;
+        height: 300px;
+    }
     .mainContent {
         padding: 26px 161px 27px 122px;
 

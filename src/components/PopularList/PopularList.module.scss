@@ -1,9 +1,16 @@
 .main {
     margin-top: 30px;
     padding-bottom: 71px;
+    @media screen and (min-width: 0) and (max-width: 739px) {
+        margin-top: 20px;
+    }
     .wrapper {
         display: flex;
         flex-wrap: wrap;
+
+        @media screen and (min-width: 0) and (max-width: 739px) {
+            
+        }
     }
     
     .header {
@@ -11,5 +18,11 @@
         font-weight: 400;
         line-height: 36px;
         margin-left: 16px;
+        @media screen and (min-width: 0) and (max-width: 739px) {
+            font-size: 18px;
+            line-height: 100%;
+            text-align: center;
+            margin-left: 0;
+        }
     }
 }

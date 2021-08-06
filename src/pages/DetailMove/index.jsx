@@ -42,7 +42,7 @@ export const DetailMovie = () => {
                 {data.getMovieById.name}
             </div>
             <div className={styles.movie}>
-            <iframe width="100%" height="600px" src={`${data.getMovieById.movieParts[0].movieServers[0].movieLinks[0].videoLink}`} title="W3Schools Free Online Web Tutorials" allowfullscreen="true"></iframe>
+              <iframe width="100%" height="600px" src={`${data.getMovieById.movieParts[0].movieServers[0].movieLinks[0].videoLink}`} title="W3Schools Free Online Web Tutorials" allowfullscreen="true"></iframe>
             </div>
 
             <div className={styles.detailContent}>

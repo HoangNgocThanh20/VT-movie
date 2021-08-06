@@ -4,7 +4,7 @@ import styles from './Footer.module.scss';
 
 export const Footer = () => {
     return (
-        <div className={styles.main}> 
+        <div className={styles.main}>
             <Container className={styles.wrapper}>
                 <div className={styles.footerFlex}>
                     <div className={styles.flexLeft}>

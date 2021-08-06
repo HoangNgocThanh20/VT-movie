@@ -2,35 +2,103 @@
     margin-top: 80px;
     font-weight: 500;
 
-    .countViews {
-        margin-left: 108px;
-        margin-top: 10px;
-        font-size: 22px;
+    @media screen and (min-width: 0) and (max-width: 739px) {
+        margin-top: 120px;
+    }
+    @media screen and (min-width: 740px) and (max-width: 1024px) {
+        margin-top: 120px;
     }
 
     .title {
         font-size: 24px;
         line-height: 28.13px;
         margin-left: 108px;
+        @media screen and (min-width: 0) and (max-width: 739px) {
+            margin-left: 0;
+            font-size: 20px;
+            line-height: 100%;
+        }
+        @media screen and (min-width: 740px) and (max-width: 1024px) {
+            text-align: center;
+            margin-top: 120px;
+            font-size: 22px;
+            line-height: 100%;
+            margin-left: 0;
+        }
     }
 
     .movie {
         margin-left: 108px;
         margin-top: 59px;
+
+        @media screen and (min-width: 0) and (max-width: 739px) {
+            margin: 20px 0;
+        }
+        @media screen and (min-width: 740px) and (max-width: 1024px) {
+            margin: 30px 0;
+        }
+        iframe {
+            @media screen and (min-width: 0) and (max-width: 739px) {
+                height: 160px;
+            }
+        }
+        
     }
     .detailContent {
         margin-top: 254px;
         font-size: 22px;
         display: flex;
 
-        img {
-            width: 400px;
-            margin-left: 108px;
+        @media screen and (min-width: 0) and (max-width: 739px) {
+            font-size: 10px;
+            margin-top: 20px;
+            display: block;
         }
+        @media screen and (min-width: 740px) and (max-width: 1024px) {
+            font-size: 16px;
+            margin-top: 20px;
+            display: block;
+        }
+
+        .logoDetail {
+            text-align: center;
+            img {
+                width: 400px;
+                margin-left: 108px;
+                @media screen and (min-width: 0) and (max-width: 739px) {
+                    width: 160px;
+                    margin-left: 0;
+                }
+                @media screen and (min-width: 740px) and (max-width: 1024px) {
+                    width: 500px;
+                    margin-left: 0;
+                }
+            }
+        }
+
         .wrapperDetail {
             display: flex;
             margin-left: 108px;
+            @media screen and (min-width: 0) and (max-width: 739px) {
+                margin: 10px 0;
+            }
+            @media screen and (min-width: 740px) and (max-width: 1024px) {
+                margin: 20px 0;
+            }
         }
+    }
 
+    .countViews {
+        margin-left: 108px;
+        margin-top: 10px;
+        font-size: 22px;
+        @media screen and (min-width: 0) and (max-width: 739px) {
+            font-size: 10px;
+            margin-left: 0;
+        }
+        @media screen and (min-width: 740px) and (max-width: 1024px) {
+            font-size: 14px;
+            margin-left: 0;
+        }
     }
 }
