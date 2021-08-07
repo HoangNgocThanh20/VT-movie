@@ -10,7 +10,7 @@
    @media screen and (min-width: 0) and (max-width: 739px) {
        height: 50px;
        background: rgb(167, 25, 25);
-       position: relative;
+       position: fixed;
    }
    @media screen and (min-width: 740px) and (max-width: 1113px) {
         background-color: rgb(167, 25, 25);
@@ -26,7 +26,7 @@
             padding: 8px 20px 0 11px;
             @media screen and (min-width: 0) and (max-width: 739px) {
                 font-size: 12px;
-                padding: 15px;
+                padding: 10px;
                 position:absolute;
             }
             @media screen and (min-width: 740px) and (max-width: 1113px) {
@@ -40,6 +40,7 @@
             margin-top: 15px;
             @media screen and (min-width: 0) and (max-width: 739px) {
                margin-left: 30%;
+               margin-top: 6px;
             }
             @media screen and (min-width: 740px) and (max-width: 1113px) {
                 margin-left: 0;
@@ -89,11 +90,13 @@
             align-items: center;
             justify-content: space-between;
             @media screen and (min-width: 0) and (max-width: 739px) {
-                position: absolute;
-                top: 50px;
-                left: 50%;
-                transform: translateX(-50%);
+                position: fixed;
+                top: 40px;
+                left: 0;
                 justify-content: center;
+                right: 0;
+                background: #000;
+                padding-bottom: 5px;
             }
             @media screen and (min-width: 740px) and (max-width: 1113px) {
                 margin-left: 10px;
