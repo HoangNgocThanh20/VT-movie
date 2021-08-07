@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Banner, PopularList } from 'src/components';
 import { gql, useQuery } from '@apollo/client';
+import { Skeleton } from '@material-ui/lab';
+import React, { useEffect } from 'react';
+import { Banner, PopularList } from 'src/components';
 
 const GET_MOVIE_LIST = gql`
 query getMovieList($name: String){
@@ -26,12 +27,19 @@ query getMovieList($name: String){
 
 export const Home = () => {
 
-    const { loading, error, data } = useQuery(GET_MOVIE_LIST, {
+    const { loading, data } = useQuery(GET_MOVIE_LIST, {
         variables: { name: "" },
     });
 
+    useEffect(() => {
+      document.title = "Home"
+    },[]);
+
     if(loading)
-        return <div>Loading...</div>;
+        return <>
+          <Banner />
+          <div>Loading ...</div>
+        </>;
     else {
         console.log(data.getMovieList);
     }

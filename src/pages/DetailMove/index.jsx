@@ -1,10 +1,8 @@
-import { Container } from '@material-ui/core';
-import React from 'react';
-import styles from './DetailMove.module.scss';
 import { gql, useQuery } from '@apollo/client';
-import { useLocation, useParams } from 'react-router-dom';
-import queryString from 'query-string';
-import { slug } from 'src/ulti/slug';
+import { Container } from '@material-ui/core';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import styles from './DetailMove.module.scss';
 
 const GET_MOVIE_BY_ID = gql`
 query getMovieById($id: Float!){
@@ -32,10 +30,11 @@ export const DetailMovie = () => {
     const { loading, error, data } = useQuery(GET_MOVIE_BY_ID, {
         variables: { id: Number.parseInt(params.MovieId)},
     });
-
     if(loading) {
       return <div>loading....</div>
     }
+    else {
+      document.title = `${data.getMovieById.name}`
     return (
         <Container className={styles.wrapper}>
             <div className={styles.title}>
@@ -56,4 +55,5 @@ export const DetailMovie = () => {
             <p className={styles.countViews}>Lượt xem: 1.123.234 lượt xem</p>
         </Container>
     );
+    }
 }

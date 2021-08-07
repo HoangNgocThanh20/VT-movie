@@ -14,7 +14,6 @@ function App() {
     <Router>
       <Box>
       <Header />
-
         <Switch>
             <Redirect exact from="/" to="/home"/>
             <Route path="/home" exact component={Home} />
