@@ -1,12 +1,12 @@
 import { gql, useQuery } from '@apollo/client';
 import { Container } from '@material-ui/core';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './DetailMove.module.scss';
 
 const GET_MOVIE_BY_ID = gql`
-query getMovieById($id: Float!){
-  getMovieById(id: $id){
+query movie($id: Int!){
+  movie(id: $id){
     name
     id
     poster
@@ -34,22 +34,22 @@ export const DetailMovie = () => {
       return <div>loading....</div>
     }
     else {
-      document.title = `${data.getMovieById.name}`
+      document.title = `${data.movie.name}`
     return (
         <Container className={styles.wrapper}>
             <div className={styles.title}>
-                {data.getMovieById.name}
+                {data.movie.name}
             </div>
             <div className={styles.movie}>
-              <iframe width="100%" height="600px" src={`${data.getMovieById.movieParts[0].movieServers[0].movieLinks[0].videoLink}`} title="W3Schools Free Online Web Tutorials" allowfullscreen="true"></iframe>
+              <iframe width="100%" height="600px" src={`${data.movie.movieParts.movieServers.movieLinks.videoLink}`} title="W3Schools Free Online Web Tutorials" allowfullscreen="true"></iframe>
             </div>
 
             <div className={styles.detailContent}>
                 <div className={styles.logoDetail}>
-                   <img src={`${data.getMovieById.poster}`} alt="" />
+                   <img src={`${data.movie.poster}`} alt="" />
                 </div>
                 <div className={styles.wrapperDetail}>
-                      <p>{data.getMovieById.description}</p>
+                      <p>{data.movie.description}</p>
                 </div>
             </div>
             <p className={styles.countViews}>Lượt xem: 1.123.234 lượt xem</p>

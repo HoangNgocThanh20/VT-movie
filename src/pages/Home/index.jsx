@@ -1,23 +1,27 @@
 import { gql, useQuery } from '@apollo/client';
 import { Skeleton } from '@material-ui/lab';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Banner, PopularList } from 'src/components';
 
 const GET_MOVIE_LIST = gql`
-query getMovieList($name: String){
-  getMovieList(name: $name){
-    name
-    id
-    poster
-    description
-    movieParts {
-      type
-      part
-      movieServers {
-        provider
-        movieLinks {
-          name
-          videoLink
+query movies($paging: CursorPaging){
+  movies(paging: $paging){
+    edges {
+      node {
+        name
+        id
+        poster
+        description
+        movieParts {
+          type
+          part
+          movieServers {
+            provider
+            movieLinks {
+              name
+              videoLink
+            }
+          }
         }
       }
     }
@@ -26,11 +30,10 @@ query getMovieList($name: String){
 `
 
 export const Home = () => {
-
     const { loading, data } = useQuery(GET_MOVIE_LIST, {
-        variables: { name: "" },
+        variables: { paging: { first: 24 } },
     });
-
+    const [dataMovie, setDataMovie] = useState([]);
     useEffect(() => {
       document.title = "Home"
     },[]);
@@ -40,14 +43,16 @@ export const Home = () => {
           <Banner />
           <div>Loading ...</div>
         </>;
-    else {
-        console.log(data.getMovieList);
+    else if(!dataMovie.length) {
+        console.log(data.movies.edges);
+        const dataRes = data.movies.edges.map(dt => dt.node);
+        setDataMovie(dataRes);
     }
     
     return (
         <>
             <Banner />
-            <PopularList listItem={data.getMovieList}/>
+            <PopularList listItem={dataMovie}/>
         </>
     );
 }
