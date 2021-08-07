@@ -1,5 +1,4 @@
 import { gql, useQuery } from '@apollo/client';
-import { Skeleton } from '@material-ui/lab';
 import React, { useEffect, useState } from 'react';
 import { Banner, PopularList } from 'src/components';
 
