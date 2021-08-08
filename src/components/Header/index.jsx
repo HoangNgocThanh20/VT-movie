@@ -36,7 +36,7 @@ export const Header = () => {
         }
       );
     const [callApi, setCallApi] = useState(true);
-    const [searchValue, setSearchValue] = useState(true);
+    const [searchValue, setSearchValue] = useState("");
     const [searchData, setSearchData] = useState([]);
     if(!loading && data && callApi) {
         setCallApi(false);
