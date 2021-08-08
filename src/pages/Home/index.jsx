@@ -30,7 +30,7 @@ query movies($paging: CursorPaging){
 
 export const Home = () => {
     const { loading, data } = useQuery(GET_MOVIE_LIST, {
-        variables: { paging: { first: 24 } },
+        variables: { paging: { first: 500 } },
     });
     const [dataMovie, setDataMovie] = useState([]);
     useEffect(() => {

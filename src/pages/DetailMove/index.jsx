@@ -41,7 +41,7 @@ export const DetailMovie = () => {
                 {data.movie.name}
             </div>
             <div className={styles.movie}>
-              <iframe width="100%" height="600px" src={`${data.movie.movieParts.movieServers.movieLinks.videoLink}`} title="W3Schools Free Online Web Tutorials" allowfullscreen="true"></iframe>
+              <iframe width="100%" height="600px" src={`${data.movie.movieParts[0].movieServers[0].movieLinks[0].videoLink}`} title="W3Schools Free Online Web Tutorials" allowfullscreen="true"></iframe>
             </div>
 
             <div className={styles.detailContent}>
@@ -52,7 +52,7 @@ export const DetailMovie = () => {
                       <p>{data.movie.description}</p>
                 </div>
             </div>
-            <p className={styles.countViews}>Lượt xem: 1.123.234 lượt xem</p>
+            {/* <p className={styles.countViews}>Lượt xem: 1.123.234 lượt xem</p> */}
         </Container>
     );
     }

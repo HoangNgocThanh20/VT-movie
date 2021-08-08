@@ -39,16 +39,30 @@
         .search {
             .searchContent {
                 position: absolute;
+                z-index: 2021;
                 background-color: #000;
                 border-radius: 4px;
                 height: auto;
                 width: 355px;
+                @media screen and (min-width: 0) and (max-width: 739px) {
+                    margin-left: 20px;
+                    width: 200px;
+                 }
+                 @media screen and (min-width: 740px) and (max-width: 1113px) {
+                    width: 250px;
+                }
                 .content {
                     &:hover {
                         background-color: #333;
                     }
                     cursor: pointer;
                     padding: 20px 10px;
+                    @media screen and (min-width: 0) and (max-width: 739px) {
+                        padding: 10px 8px;
+                     }
+                     @media screen and (min-width: 740px) and (max-width: 1113px) {
+                        padding: 10px 8px;
+                    }
                 }
             }
 
@@ -74,6 +88,7 @@
                 @media screen and (min-width: 0) and (max-width: 739px) {
                     width: 200px;
                     height: 30px;
+                    margin-left: 20px;
                     padding: 0 20px 0 10px;
                     font-size: 10px;
                 }
