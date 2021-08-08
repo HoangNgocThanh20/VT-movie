@@ -44,13 +44,10 @@ export const Header = () => {
     }
     console.log(searchData);
     const changeSearchInput = (e) => {
-        const searchValue = e.target.value.normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/đ/g, "d")
-        .replace(/Đ/g, "D");
+        const searchValue = e.target.value;
         setSearchValue(searchValue);
         setCallApi(true);
-        getMovieSearch({ variables: {filter: { name: { like: `%${searchValue}%`}}, paging: { first: 3 }}})
+        getMovieSearch({ variables: {filter: { name: { like: `%${searchValue}%`}}, paging: { first: 6 }}})
     }
     const renderSearchResult = () => {
         if(!searchValue.length) return null;
@@ -70,7 +67,7 @@ export const Header = () => {
                         </div>
                         <div>
                             <div className={styles.search}>
-                                <input onClick={() => setSearchValue(" ")} onChange={changeSearchInput} type="text" placeholder="Tìm:tên phim, đạo diễn , diễn viên" />
+                                <input value={searchValue} onChange={changeSearchInput} type="text" placeholder="Tìm:tên phim, đạo diễn , diễn viên" />
                                 <ion-icon name="search-outline"></ion-icon>
                                 <div className={styles.searchContent}>
                                     {renderSearchResult()}

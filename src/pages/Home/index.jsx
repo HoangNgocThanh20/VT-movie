@@ -1,57 +1,66 @@
-import { gql, useQuery } from '@apollo/client';
-import React, { useEffect, useState } from 'react';
-import { Banner, PopularList } from 'src/components';
+import { gql, useLazyQuery } from '@apollo/client'
+import React, { useEffect, useState } from 'react'
+import { Banner, PopularList } from 'src/components'
 
 const GET_MOVIE_LIST = gql`
-query movies($paging: CursorPaging){
-  movies(paging: $paging){
-    edges {
-      node {
-        name
-        id
-        poster
-        description
-        movieParts {
-          type
-          part
-          movieServers {
-            provider
-            movieLinks {
-              name
-              videoLink
+  query movies($paging: CursorPaging) {
+    movies(paging: $paging) {
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+      edges {
+        node {
+          name
+          id
+          poster
+          description
+          movieParts {
+            type
+            part
+            movieServers {
+              provider
+              movieLinks {
+                name
+                videoLink
+              }
             }
           }
         }
       }
     }
   }
-}
 `
 
 export const Home = () => {
-    const { loading, data } = useQuery(GET_MOVIE_LIST, {
-        variables: { paging: { first: 500 } },
-    });
-    const [dataMovie, setDataMovie] = useState([]);
-    useEffect(() => {
-      document.title = "Home"
-    },[]);
+  const [getMovieList, { called, loading, data }] = useLazyQuery(GET_MOVIE_LIST)
+  const [dataMovie, setDataMovie] = useState([])
+  useEffect(() => {
+    document.title = 'Home'
+    getMovieList({ variables: { paging: { first: 6 } } })
+  }, [])
 
-    if(loading)
-        return <>
-          <Banner />
-          <div>Loading ...</div>
-        </>;
-    else if(!dataMovie.length) {
-        console.log(data.movies.edges);
-        const dataRes = data.movies.edges.map(dt => dt.node);
-        setDataMovie(dataRes);
+  useEffect(() => {
+    if(!data) return;
+    const dataRes = data.movies.edges.map((dt) => dt.node)
+    setDataMovie(dataMovie.concat(dataRes))
+    if (data.movies.pageInfo.hasNextPage) {
+      console.log('Call api')
+      getMovieList({
+        variables: {
+          paging: { first: 12, after: data.movies.pageInfo.endCursor },
+        },
+      })
     }
-    
-    return (
-        <>
-            <Banner />
-            <PopularList listItem={dataMovie}/>
-        </>
-    );
+  }, [data])
+
+  if (!dataMovie.length)
+    return null;
+
+  return (
+    <>
+      <Banner />
+      <PopularList listItem={dataMovie} />
+    </>
+  )
 }
