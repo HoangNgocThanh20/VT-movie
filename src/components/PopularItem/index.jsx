@@ -10,7 +10,7 @@ export const PopularItem = ({
 }) => {
     return (
         <div className={styles.wrapper}>
-            <Link to={`/detailMovie/${item.id}`}>  
+            <Link to={`/xem-phim/${item.id}`}>  
                 <img src={`${image}`} alt="sieu anh hung" />
                 <h5>{header}</h5>
                 <p>{title}</p>

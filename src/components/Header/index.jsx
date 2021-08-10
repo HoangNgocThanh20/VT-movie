@@ -52,7 +52,7 @@ export const Header = () => {
     const renderSearchResult = () => {
         if(!searchValue.length) return null;
         return searchData.map((search,index) => {
-            return <Link onClick={()=> {setSearchValue("")}} to={`/detailMovie/${search.node.id}`}>
+            return <Link onClick={()=> {setSearchValue("")}} to={`/xem-phim/${search.node.id}`}>
                     <div key={index} className={styles.content}>{search.node.name}</div>
                 </Link>
         })

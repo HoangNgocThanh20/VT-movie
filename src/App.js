@@ -8,6 +8,7 @@ import {
 import { Footer, Header } from "src/components"
 import { Home } from "src/pages/Home";
 import { DetailMovie } from "src/pages/DetailMove";
+import { CategoryList } from "./components/CategoryList";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         <Switch>
             <Redirect exact from="/" to="/home"/>
             <Route path="/home" exact component={Home} />
-            <Route path="/detailMovie/:MovieId" component={DetailMovie} />
+            <Route path="/xem-phim/:MovieId" component={DetailMovie} />
+            <Route path="/home/:CategoryList" component={CategoryList} />
         </Switch>
         
       <Footer />

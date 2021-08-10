@@ -81,6 +81,7 @@
                 width: 355px;
                 border: 1px solid #656464;
                 padding: 0 70px 0 25px;
+                margin-right: 20px;
                 border-radius: 20px;
                 &::placeholder {
                     color: #fff;
@@ -103,6 +104,7 @@
                 position: relative;
                 left: -70px;
                 top: 3px;
+                display: none;
                 &:hover {
                     cursor: pointer;
                 }
