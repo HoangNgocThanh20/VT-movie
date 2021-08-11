@@ -49,6 +49,8 @@ export const CategoryList = () => {
   const [dataMovie, setDataMovie] = useState([])
   useEffect(() => {
     document.title = 'Home'
+    // go to top
+    document.documentElement.scrollTop = 0;
     getMovieList({ variables: { filter: { categories: { id: { eq: +query.get("id")}}}, paging: { first: 6 } } })
   }, [])
 

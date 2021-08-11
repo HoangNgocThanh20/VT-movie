@@ -34,6 +34,8 @@ export const DetailMovie = () => {
       return <div>loading....</div>
     }
     else {
+      // go to top
+      document.documentElement.scrollTop = 0;
       document.title = `${data.movie.name}`
     return (
         <Container className={styles.wrapper}>
