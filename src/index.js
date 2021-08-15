@@ -10,7 +10,7 @@ import {
 } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: 'https://movie-craw.herokuapp.com/graphql',
+  uri: 'http://149.28.140.232:3333/graphql',
   cache: new InMemoryCache()
 });
 ReactDOM.render(
