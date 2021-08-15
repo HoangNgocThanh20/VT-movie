@@ -10,7 +10,7 @@ import {
 } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: 'http://149.28.140.232:3333/graphql',
+  uri: 'https://api.phimchill.com/graphql',
   cache: new InMemoryCache()
 });
 ReactDOM.render(
