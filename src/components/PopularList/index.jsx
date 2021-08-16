@@ -46,7 +46,6 @@ export const PopularList = ({ title, categoryId }) => {
   }, [data])
 
   useEffect(() => {
-    document.title = 'VT - Movie'
     getMovieList({
       variables: {
         filter: { categories: { id: { eq: categoryId } } },

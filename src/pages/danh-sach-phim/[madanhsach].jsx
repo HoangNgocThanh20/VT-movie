@@ -42,7 +42,6 @@ export default function CategoryList () {
   const [getMovieList, { called, loading, data }] = useLazyQuery(GET_MOVIE_LIST)
   const [dataMovie, setDataMovie] = useState([])
   useEffect(() => {
-    document.title = 'Home'
     // go to top
     document.documentElement.scrollTop = 0;
     getMovieList({ variables: { filter: { categories: { id: { eq: +madanhsach}}}, paging: { first: 6 } } })

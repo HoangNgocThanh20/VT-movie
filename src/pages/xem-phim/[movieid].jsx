@@ -28,7 +28,6 @@ query movie($id: Int!){
 export default function DetailMovie () {
   const router = useRouter()
   const { movieid } = router.query;
-  console.log("movieId",movieid);
     const { loading, error, data } = useQuery(GET_MOVIE_BY_ID, {
         variables: { id: Number.parseInt(movieid)},
     });
@@ -38,7 +37,6 @@ export default function DetailMovie () {
     else {
       // go to top
       document.documentElement.scrollTop = 0;
-      document.title = `${data.movie.name}`
     return (
         <Container className={styles.wrapper}>
             <div className={styles.title}>
