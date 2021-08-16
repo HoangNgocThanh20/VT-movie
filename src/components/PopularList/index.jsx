@@ -1,9 +1,9 @@
+import { gql, useLazyQuery } from '@apollo/client';
 import { Container } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { PopularItem } from 'src/components';
 import styles from './PopularList.module.scss';
-import { gql, useLazyQuery } from '@apollo/client'
-import { useHistory, useParams } from 'react-router-dom';
 
 const GET_MOVIE_LIST = gql`
   query movies($filter: MovieFilter,$paging: CursorPaging) {

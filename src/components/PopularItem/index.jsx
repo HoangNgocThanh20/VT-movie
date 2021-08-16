@@ -10,11 +10,11 @@ export const PopularItem = ({
 }) => {
     return (
         <div className={styles.wrapper}>
-            <Link to={`/xem-phim/${item.id}`}>  
+            <a href={`/xem-phim/${item.id}`} target="_blank" rel="noreferrer">  
                 <img src={`${image}`} alt="sieu anh hung" />
                 <h5>{header}</h5>
                 <p>{title}</p>
-            </Link>
+            </a>
         </div>
     );
 }

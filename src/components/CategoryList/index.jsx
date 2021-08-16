@@ -68,7 +68,6 @@ export const CategoryList = () => {
       })
     }
   }, [data])
-
   return (
     <>
      <Container className={styles.main}>

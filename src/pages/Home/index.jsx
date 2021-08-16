@@ -1,6 +1,8 @@
-import { gql, useLazyQuery, useQuery } from '@apollo/client'
-import React, { useEffect, useState } from 'react'
+import { gql, useQuery } from '@apollo/client'
+import React, { useState } from 'react'
 import { Banner, PopularList } from 'src/components'
+import { SkeletonComponent } from 'src/components/SkeletonComponent'
+import { Skeleton } from 'src/components/SkeletonComponent'
 
 const GET_CATEGORY_LIST = gql`
   query {
@@ -38,7 +40,12 @@ export const Home = () => {
   }
   
   if(categoryQuery.loading){
-    return <div>Loading2 ....</div>
+    return (
+      <>
+      <Banner />
+      <SkeletonComponent />
+      </>
+    )
   }
   else if(listCategory.length === 0) {
     setListCategory(categoryQuery.data.categories.edges);
