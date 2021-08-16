@@ -39,6 +39,8 @@ export const Home = () => {
     )
   }
   
+  // show skeleton when loading 
+
   if(categoryQuery.loading){
     return (
       <>
