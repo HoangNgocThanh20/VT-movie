@@ -1,8 +1,8 @@
 import { gql, useQuery } from '@apollo/client';
 import { Container } from '@material-ui/core';
+import { useRouter } from 'next/router'
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import styles from './DetailMove.module.scss';
+import styles from './detail-movie.module.scss';
 
 const GET_MOVIE_BY_ID = gql`
 query movie($id: Int!){
@@ -25,10 +25,12 @@ query movie($id: Int!){
   }
   }
   `
-export const DetailMovie = () => {
-  const params = useParams();
+export default function DetailMovie () {
+  const router = useRouter()
+  const { movieid } = router.query;
+  console.log("movieId",movieid);
     const { loading, error, data } = useQuery(GET_MOVIE_BY_ID, {
-        variables: { id: Number.parseInt(params.MovieId)},
+        variables: { id: Number.parseInt(movieid)},
     });
     if(loading) {
       return <div>loading....</div>

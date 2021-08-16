@@ -1,6 +1,6 @@
 import { Container, Grid } from '@material-ui/core';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link'
 import styles from './Header.module.scss';
 import { gql, useLazyQuery } from "@apollo/client";
 const GET_MOVIE_LIST = gql`
@@ -52,7 +52,7 @@ export const Header = () => {
     const renderSearchResult = () => {
         if(!searchValue.length) return null;
         return searchData.map((search,index) => {
-            return <Link onClick={()=> {setSearchValue("")}} to={`/xem-phim/${search.node.id}`}>
+            return <Link onClick={()=> {setSearchValue("")}} href={`/xem-phim/${encodeURIComponent(search.node.id)}`}>
                     <div key={index} className={styles.content}>{search.node.name}</div>
                 </Link>
         })
@@ -63,7 +63,7 @@ export const Header = () => {
                 <Grid container>
                     <div className={styles.header}>
                         <div className={styles.logoHeader}>
-                            <Link to="/home">VT MOVIE</Link>
+                            <Link href="/">VT MOVIE</Link>
                         </div>
                         <div>
                             <div className={styles.search}>
@@ -76,19 +76,19 @@ export const Header = () => {
                         </div>
                         <ul className={`${styles.listPage}`}>
                             <li>
-                                <Link to="/home">Trang chủ</Link>
+                                <Link href="/">Trang chủ</Link>
                             </li>
                             <li>
-                                <Link to="/category">Thể Loại</Link>
+                                <Link href="/category">Thể Loại</Link>
                             </li>
                             <li>
-                                <Link to="/country">Quốc gia</Link>
+                                <Link href="/country">Quốc gia</Link>
                             </li>
                             <li>
-                                <Link to="/oddMovie">Phim lẻ</Link>
+                                <Link href="/oddMovie">Phim lẻ</Link>
                             </li>
                             <li>
-                                <Link to="/seriesMovie">Phim Bộ</Link>
+                                <Link href="/seriesMovie">Phim Bộ</Link>
                             </li>
                         </ul>
                     </div>
