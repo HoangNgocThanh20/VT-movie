@@ -9,7 +9,9 @@
         flex-wrap: wrap;
 
         @media screen and (min-width: 0) and (max-width: 739px) {
-            
+            margin-top: 20px;
+            padding: 0;
+            min-width: 330px;
         }
     }
     

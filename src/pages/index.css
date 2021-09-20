@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #222222;
+  --secondary-color: #111111;
+}
+
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -51,3 +56,4 @@ a {
   align-items: center;
   justify-content: space-around;
 }
+

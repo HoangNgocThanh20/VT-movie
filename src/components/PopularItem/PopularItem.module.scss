@@ -2,21 +2,34 @@
     font-size: 14px;
     margin: 10px 16px;
     width: 161px;
+    
     @media screen and (min-width: 0) and (max-width: 739px) {
         width: 70%;
         margin-top: 20px;
         margin-bottom: 25px;
-        margin-left: 15%;
+        margin-left: 10px;
+        height: 149px;
+        width: 90px;
+        margin: 16px 8px;
     }
     @media screen and (min-width: 740px) and (max-width: 1113px) {
         width: 148px;
         margin-bottom: 0;
     }
+
+    .imgFirm {
+        @media screen and (min-width: 0) and (max-width: 739px) {
+            width: 100px;
+            max-height: 150px;
+        }
+    }
+
     h5 {
         font-weight: 500;
         line-height: 16.41px;
         margin-top: 13px;
     }
+
     p {
         font-weight: 300;
         line-height: 16.41px;

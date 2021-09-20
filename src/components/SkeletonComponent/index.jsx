@@ -11,34 +11,41 @@ export const SkeletonComponent = () => {
             <Grid item xs={3}>
                 <Skeleton variant="rect" width={161} height={227} />
             </Grid>
+
+            <Grid item xs={3}>
+                <Skeleton variant="rect" width={161} height={227} />
+            </Grid>
+
+            <Grid item xs={3}>
+                <Skeleton variant="rect" width={161} height={227} />
+            </Grid>
+
+            <Grid item xs={3}>
+                <Skeleton variant="rect" width={161} height={227} />
+            </Grid>
+
+            <Grid item xs={3}>
+                <Skeleton variant="rect" width={161} height={227} />
+            </Grid>
+
             <Grid item xs={3}>
                 <Skeleton variant="rect" width={161} height={227} />
             </Grid>
             <Grid item xs={3}>
                 <Skeleton variant="rect" width={161} height={227} />
             </Grid>
+
             <Grid item xs={3}>
                 <Skeleton variant="rect" width={161} height={227} />
             </Grid>
+
             <Grid item xs={3}>
                 <Skeleton variant="rect" width={161} height={227} />
             </Grid>
+
             <Grid item xs={3}>
                 <Skeleton variant="rect" width={161} height={227} />
             </Grid>
-            <Grid item xs={3}>
-                <Skeleton variant="rect" width={161} height={227} />
-            </Grid>
-            <Grid item xs={3}>
-                <Skeleton variant="rect" width={161} height={227} />
-            </Grid>
-            <Grid item xs={3}>
-                <Skeleton variant="rect" width={161} height={227} />
-            </Grid>
-            <Grid item xs={3}>
-                <Skeleton variant="rect" width={161} height={227} />
-            </Grid>
-            
           </Grid>
         </Container>
         </>
