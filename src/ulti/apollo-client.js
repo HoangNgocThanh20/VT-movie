@@ -1,9 +1,9 @@
 // ./apollo-client.js
 
 import { ApolloClient, InMemoryCache } from "@apollo/client";
-
+const hostname = process.env.hostname || "http://localhost:3001";
 const client = new ApolloClient({
-    uri: "https://api.phimchill.com/graphql",
+    uri: `https:///${hostname}/graphql`,
     cache: new InMemoryCache(),
 });
 
